@@ -1,0 +1,14 @@
+{"name": "bundesnetz",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
+"dependencies": {
+    "bufferstream": "^0.6.2",
+    "async": "1.5.0",
+    "glob": "^5.0.15"
+},
+"author": "",
+"license": "CC-BY-SA-4.0"}
