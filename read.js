@@ -6,19 +6,8 @@ var BufferStream = require('bufferstream')
 var elasticsearch = require('elasticsearch')
 
 
-var config = {
-    cwd: "/home/dodo/code/stuff/bundesgit",
-    search: "localhost:9200",
-    index: "bundesgit",
-}
-
-
-
-client = new elasticsearch.Client({
-    host: config.search,
-//     log: "debug",
-    log: "info",
-})
+var config = require('./config')
+var client = new elasticsearch.Client(config.elasticsearch)
 
 
 async.waterfall([
