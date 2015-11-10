@@ -35,7 +35,7 @@ body > nav > button {
     float: left;
 }
 
-body > nav > a {
+body > nav a {
     display: flex;
     border-radius: 16px;
     margin: 8px;
@@ -51,7 +51,7 @@ body > nav > a {
     color: black;
     text-decoration: none;
 }
-body > nav > a:hover {
+body > nav a:hover {
     text-decoration: underline;
 }
 
