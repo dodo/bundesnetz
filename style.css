@@ -22,12 +22,6 @@ body, html {
     width: 100%;
 }
 
-svg text {
-    color: #fff;
-    background: #111;
-    border-radius: 4px;
-}
-
 body > nav {
     position: absolute;
     color: black;

@@ -32,7 +32,7 @@ if (webgl) {
     events.mouseDown(click)
 } else {
     graphics.node(function (node) {
-        return Viva.Graph.svg('text').text(node.data)
+        return Viva.Graph.svg('text').text(node.data).on('mousedown', click.bind(null, node))
     })
 }
 
