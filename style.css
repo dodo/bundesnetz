@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     top: 0;
     left: 0;
@@ -24,6 +28,34 @@ svg text {
     border-radius: 4px;
 }
 
+body > nav {
+    position: absolute;
+    color: black;
+    pointer-events: none;
+}
+body > nav > * {
+    pointer-events: all;
+}
+
+body > nav > button {
+    float: left;
+}
+
+body > nav > header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 16px;
+    margin: 8px;
+    margin-left: 0;
+    padding: 4px 8px 4px 8px;
+
+    min-height: 32px;
+    font-size: 18px;
+    background: rgba(255,255,255,0.8);
+    border: none;
+}
+
 button {
     display: flex;
     align-content: center;
@@ -39,7 +71,6 @@ button {
     border: none;
     cursor: pointer;
 
-    position: absolute;
 
     -webkit-transition: 600ms;
     -moz-transition: 600ms;

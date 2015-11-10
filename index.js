@@ -19,7 +19,7 @@ async.waterfall([
                 query: {
                     match_all: {},
                 },
-                fields: ["slug","origslug","jurabk"],
+                fields: ["slug","origslug","jurabk","Title"],
             },
         }, function (err, res) {
             if (err) return callback(err)
@@ -33,6 +33,7 @@ async.waterfall([
                 slug:     hit.fields.slug[0],
                 jurabk:   hit.fields.jurabk[0],
                 origslug: hit.fields.origslug[0],
+                title:    hit.fields.Title[0],
             }, callback)
         }, callback)
     },
@@ -76,6 +77,7 @@ function index(law, callback) {
                 lawIndex[law.origslug] = {
                     id: law.origslug,
                     name: law.jurabk,
+                    title: law.title,
                     links: ids,
                 }
                 callback()

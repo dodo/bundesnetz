@@ -28,6 +28,10 @@ if (webgl) {
     graphics.node(function (node) {
         return Viva.Graph.View.webglText(node)
     })
+    var events = Viva.Graph.webglInputEvents(graphics, graph)
+    events.mouseDown(function (node) {
+        document.body.querySelector('header[name="title"]').innerText = fulldata[node.id].title || "?"
+    })
 } else {
     graphics.node(function (node) {
         return Viva.Graph.svg('text').text(node.data)
@@ -54,7 +58,9 @@ document.querySelector('button[name="pause"]')
 
 
 chars = {}
+fulldata = {}
 function load(data) {
+    fulldata = data
     graph.beginUpdate()
     Object.keys(data).forEach(function (key) {
         var node = data[key]
