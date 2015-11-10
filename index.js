@@ -73,7 +73,11 @@ function index(law, callback) {
                 var ids = res.hits.hits.map(function (hit) {
                     return hit._id
                 }).filter(function (id) {return id !== law.origslug})
-                if (ids.length) lawIndex[law.origslug] = ids
+                lawIndex[law.origslug] = {
+                    id: law.origslug,
+                    name: law.jurabk,
+                    links: ids,
+                }
                 callback()
             })
         },

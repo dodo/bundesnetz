@@ -1,0 +1,64 @@
+body, html {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    background: #ddd;
+    color: #111;
+    z-index: -2;
+    overflow: hidden;
+    position: absolute;
+    font-family: Verdana;
+}
+
+#graph, svg {
+    height: 100%;
+    width: 100%;
+}
+
+svg text {
+    color: #fff;
+    background: #111;
+    border-radius: 4px;
+}
+
+button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 32px;
+    margin: 8px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    background: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+
+    -webkit-transition: 600ms;
+    -moz-transition: 600ms;
+    -o-transition: 600ms;
+    transition: 600ms;
+
+    background-size: 0% 0%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-image: -webkit-radial-gradient(circle contain, black, black 50%, white 50%, white);
+    background-image: -moz-radial-gradient(circle contain, black, black 50%, white 50%, white);
+    background-image: -o-radial-gradient(circle contain, black, black 50%, white 50%, white);
+    background-image: -ms-radial-gradient(circle contain, black, black 50%, white 50%, white);
+    background-image: radial-gradient(circle contain, black, black 50%, white 50%, white);
+}
+
+button:hover, button:focus {
+    background-size: 2222% 2222%;
+    border-color:transparent;
+    color:white;
+}
