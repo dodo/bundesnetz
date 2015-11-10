@@ -91,12 +91,11 @@ function load(data) {
 
 function fetch(url, callback) {
     var xhr = new XMLHttpRequest()
-    xhr.responseType = 'json'
     xhr.crossOrigin = 'anonymous'
-    xhr.open('get', url, /*async*/true)
     xhr.addEventListener('load', function () {
         if (xhr.status !== 200) callback(xhr.statusText)
-        else callback(null, xhr.response)
+        else callback(null, JSON.parse(xhr.response))
     })
+    xhr.open('get', url, /*async*/true)
     xhr.send()
 }
