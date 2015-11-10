@@ -75,7 +75,7 @@ function index(law, callback) {
                     return hit._id
                 }).filter(function (id) {return id !== law.origslug})
                 lawIndex[law.origslug] = {
-                    id: law.origslug,
+                    id: law.slug,
                     name: law.jurabk,
                     title: law.title,
                     links: ids,

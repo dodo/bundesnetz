@@ -29,9 +29,7 @@ if (webgl) {
         return Viva.Graph.View.webglText(node)
     })
     var events = Viva.Graph.webglInputEvents(graphics, graph)
-    events.mouseDown(function (node) {
-        document.body.querySelector('header[name="title"]').innerText = fulldata[node.id].title || "?"
-    })
+    events.mouseDown(click)
 } else {
     graphics.node(function (node) {
         return Viva.Graph.svg('text').text(node.data)
@@ -55,10 +53,27 @@ document.querySelector('button[name="pause"]')
     paused = !paused
 })
 
+var currentUrl = "https://github.com/dodo/bundesnetz"
+document.querySelector('header[name="title"]')
+.addEventListener('click', function () {
+    redirect(currentUrl)
+})
 
+
+
+
+fulldata = {}
+function click(node) {
+    var law = fulldata[node.id]
+    currentUrl = "http://bundestag.github.io/gesetze/" + law.id.charAt(0) + "/" + law.id + "/"
+    document.body.querySelector('header[name="title"]').innerText = law.title || "?"
+}
+
+function redirect(url) {
+    window.open(url, "gesetz")
+}
 
 chars = {}
-fulldata = {}
 function load(data) {
     fulldata = data
     graph.beginUpdate()
