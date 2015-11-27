@@ -62,7 +62,7 @@ function index(law, callback) {
                 body: {
                     query: {
                         match: {
-                            content: {
+                            'content': {
                                 query: law.jurabk,
                                 type: 'phrase',
                             },
