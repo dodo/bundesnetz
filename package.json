@@ -1,11 +1,14 @@
 {"name": "bundesnetz",
 "version": "1.0.0",
-"description": "",
+"description": "bundesgesetznetzwerkübersicht",
+"author": "dodo (https://github.com/dodo)",
 "dependencies": {
     "bufferstream": "^0.6.2",
     "vivagraphjs": "https://github.com/dodo/VivaGraphJS/archive/resize+gltext.tar.gz",
     "async": "^1.5.0",
     "glob": "^5.0.15"
 },
-"author": "",
+"devDependencies": {
+    "webpack": "^1.12.3"
+},
 "license": "CC-BY-SA-4.0"}
